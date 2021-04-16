@@ -33,7 +33,7 @@ public class PlayerService implements PlayerServiceInterface {
     public void deletePlayer(Long playerId) {
         boolean exist = playerRepository.existsById(playerId);
         if(!exist){
-            throw new IllegalStateException("studentID with id= " + playerId + " does not exists");
+            throw new IllegalStateException("playerID with id= " + playerId + " does not exists");
         }
         playerRepository.deleteById(playerId);
 

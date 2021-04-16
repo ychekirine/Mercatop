@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface PlayerServiceInterface {
 
-    public void addPlayer (Player player);
-    public List<Player> getPlayers();
-    public void deletePlayer(Long PlayerId);
+    void addPlayer (Player player);
+    List<Player> getPlayers();
+    void deletePlayer(Long PlayerId);
+
 }
