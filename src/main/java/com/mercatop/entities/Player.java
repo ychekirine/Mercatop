@@ -44,7 +44,7 @@ public class Player {
 
     private List<Position> pos;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<Statistics> statisticsList;
 
     public Player() {

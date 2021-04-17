@@ -31,6 +31,30 @@ public class Statistics {
     private SeasonType seasonType;
 
 
+    public Statistics() {
+
+    }
+
+    public Statistics(long id, int goals, int assists, int redCards, int yellowCards, float rate, int saves, SeasonType seasonType) {
+        this.id = id;
+        this.goals = goals;
+        this.assists = assists;
+        this.redCards = redCards;
+        this.yellowCards = yellowCards;
+        this.rate = rate;
+        this.saves = saves;
+        this.seasonType = seasonType;
+    }
+
+    public Statistics(int goals, int assists, int redCards, int yellowCards, float rate, int saves, SeasonType seasonType) {
+        this.goals = goals;
+        this.assists = assists;
+        this.redCards = redCards;
+        this.yellowCards = yellowCards;
+        this.rate = rate;
+        this.saves = saves;
+        this.seasonType = seasonType;
+    }
 
     public long getId() {
         return id;

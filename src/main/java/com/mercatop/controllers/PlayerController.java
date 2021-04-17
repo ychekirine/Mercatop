@@ -25,6 +25,7 @@ public class PlayerController {
     }
 
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Player> getPlayers() {
         return playerService.getPlayers();
     }
