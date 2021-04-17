@@ -12,7 +12,6 @@ export class PlayerService {
 
   postPlayer(player: Player): Observable<Player> {
     const url = 'http://localhost:8080/api/v1/player';
-
     return this.http.post<Player>(url, player);
   }
 
@@ -20,12 +19,7 @@ export class PlayerService {
   getPlayers(): Observable<Player[]> {
     const url = 'http://localhost:8080/api/v1/player';
     const optionRequete = {
-      headers: new HttpHeaders({
-        "Access-Control-Allow-Origin": "*"
-
-      })
     };
-    console.log("here");
     return this.http.get<Player[]>(url, optionRequete);
   }
 }

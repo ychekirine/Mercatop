@@ -16,4 +16,10 @@ export class PlayerListComponent implements OnInit {
     )
   }
 
+  positions = ['Goalkeeper', 'Defenders', 'Midfielders', 'Forwards'];
+
+  submitted = false;
+  onSubmit() { this.submitted = true; }
+
+
 }

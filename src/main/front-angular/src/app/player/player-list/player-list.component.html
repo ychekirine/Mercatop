@@ -1,1 +1,9 @@
 <p>player-list works!</p>
+
+
+<div class="form-group">
+  <label for="power">Position</label>
+  <select class="form-control" id="power" required>
+    <option *ngFor="let pos of positions" [value]="pos">{{pos}}</option>
+  </select>
+</div>

@@ -64,12 +64,11 @@ public class Player {
         this.statisticsList = statisticsList;
     }
 
-    public Player(String name, String lastname, String email, LocalDate dob, int age, int height, int weight, List<Position> pos, List<Statistics> statisticsList) {
+    public Player(String name, String lastname, String email, LocalDate dob, int height, int weight, List<Position> pos, List<Statistics> statisticsList) {
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.dob = dob;
-        this.age = age;
         this.height = height;
         this.weight = weight;
         this.pos = pos;

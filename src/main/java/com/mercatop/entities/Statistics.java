@@ -26,7 +26,7 @@ public class Statistics {
     private int assists;
     private int redCards;
     private int yellowCards;
-    private float rate;
+    private double rate;
     private int saves;
     private SeasonType seasonType;
 
@@ -35,7 +35,7 @@ public class Statistics {
 
     }
 
-    public Statistics(long id, int goals, int assists, int redCards, int yellowCards, float rate, int saves, SeasonType seasonType) {
+    public Statistics(long id, int goals, int assists, int redCards, int yellowCards, double rate, int saves, SeasonType seasonType) {
         this.id = id;
         this.goals = goals;
         this.assists = assists;
@@ -46,7 +46,7 @@ public class Statistics {
         this.seasonType = seasonType;
     }
 
-    public Statistics(int goals, int assists, int redCards, int yellowCards, float rate, int saves, SeasonType seasonType) {
+    public Statistics(int goals, int assists, int redCards, int yellowCards, double rate, int saves, SeasonType seasonType) {
         this.goals = goals;
         this.assists = assists;
         this.redCards = redCards;
@@ -96,7 +96,7 @@ public class Statistics {
         this.yellowCards = yellowCards;
     }
 
-    public float getRate() {
+    public double getRate() {
         return rate;
     }
 
@@ -120,13 +120,12 @@ public class Statistics {
         this.seasonType = seasonType;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Statistics that = (Statistics) o;
-        return id == that.id && goals == that.goals && assists == that.assists && redCards == that.redCards && yellowCards == that.yellowCards && Float.compare(that.rate, rate) == 0 && saves == that.saves && seasonType == that.seasonType;
+        return id == that.id && goals == that.goals && assists == that.assists && redCards == that.redCards && yellowCards == that.yellowCards && Double.compare(that.rate, rate) == 0 && saves == that.saves && seasonType == that.seasonType;
     }
 
     @Override
