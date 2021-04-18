@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { PlayerService } from '../../services/player.service'
+import {Component, OnInit} from '@angular/core';
+import {PlayerService} from '../../services/player.service'
+import {Player} from "../../entities/player";
+import {PositionEnum} from "../../enums/positionEnum";
 
 @Component({
   selector: 'app-player-list',
@@ -7,6 +9,9 @@ import { PlayerService } from '../../services/player.service'
   styleUrls: ['./player-list.component.css']
 })
 export class PlayerListComponent implements OnInit {
+  model = {} as Player;
+
+  positions = Object.values(PositionEnum);
 
   constructor(private playerService : PlayerService) { }
 
@@ -14,12 +19,12 @@ export class PlayerListComponent implements OnInit {
     this.playerService.getPlayers().subscribe(
       data => console.log(data)
     )
+    this.playerService.getPlayer(2).subscribe(data => this.model = data);
   }
 
-  positions = ['Goalkeeper', 'Defenders', 'Midfielders', 'Forwards'];
 
   submitted = false;
-  onSubmit() { this.submitted = true; }
-
+  onSubmit() { this.submitted = true;}
+  get diagnostic() {return JSON.stringify(this.model)}
 
 }

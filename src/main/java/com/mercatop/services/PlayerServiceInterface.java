@@ -11,4 +11,5 @@ public interface PlayerServiceInterface {
     List<Player> getPlayers();
     void deletePlayer(Long PlayerId);
 
+    Player getPlayer(Long playerId);
 }

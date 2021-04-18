@@ -1,4 +1,4 @@
-import {seasonTypeEnum} from "./seasonTypeEnum";
+import {seasonTypeEnum} from "../enums/seasonTypeEnum";
 
 export class Statistics {
 

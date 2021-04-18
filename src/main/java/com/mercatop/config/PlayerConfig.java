@@ -20,7 +20,7 @@ public class PlayerConfig {
     CommandLineRunner commandLineRunner (PlayerRepository playerRepository){
         return args -> {
             Player youcef = new Player(
-                    "youcef",
+                    "Youcef",
                     "Chekirine",
                     "youcef.chekirine@gmail.com",
                     LocalDate.of(1996, Month.AUGUST, 4),

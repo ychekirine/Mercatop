@@ -18,9 +18,12 @@ export class PlayerService {
 
   getPlayers(): Observable<Player[]> {
     const url = 'http://localhost:8080/api/v1/player';
-    const optionRequete = {
-    };
-    return this.http.get<Player[]>(url, optionRequete);
+    return this.http.get<Player[]>(url);
+  }
+
+  getPlayer(id: number): Observable<Player> {
+    const url = 'http://localhost:8080/api/v1/player/' + id;
+    return this.http.get<Player>(url);
   }
 }
 

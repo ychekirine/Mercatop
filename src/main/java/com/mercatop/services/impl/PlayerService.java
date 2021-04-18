@@ -30,6 +30,15 @@ public class PlayerService implements PlayerServiceInterface {
     }
 
     @Override
+    public Player getPlayer(Long playerId) {
+        boolean exist = playerRepository.existsById(playerId);
+        if(!exist){
+            throw new IllegalStateException("playerID with id= " + playerId + " does not exists");
+        }
+        return playerRepository.findById(playerId).get();
+    }
+
+    @Override
     public void deletePlayer(Long playerId) {
         boolean exist = playerRepository.existsById(playerId);
         if(!exist){
@@ -38,4 +47,6 @@ public class PlayerService implements PlayerServiceInterface {
         playerRepository.deleteById(playerId);
 
     }
+
+
 }

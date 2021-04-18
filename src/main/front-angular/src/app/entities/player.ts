@@ -1,5 +1,5 @@
 import {Statistics} from "./statistics";
-import {PositionEnum} from "./positionEnum";
+import {PositionEnum} from "../enums/positionEnum";
 
 export class Player {
 
@@ -10,8 +10,8 @@ export class Player {
     public dob:Date,
     public height: number,
     public weight: number,
-    public pos: PositionEnum,
-    public statisticsList: Statistics
+    public pos: PositionEnum[],
+    public statisticsList: Statistics[]
   ) {
   }
 
