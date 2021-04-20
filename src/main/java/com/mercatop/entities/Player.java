@@ -27,7 +27,7 @@ public class Player {
     )
     private long id;
     private String name;
-    private String lastname;
+    private String lastName;
     private String email;
     private LocalDate dob;
 
@@ -36,6 +36,7 @@ public class Player {
     private int height;
     //@Column (name= "weight")
     private int weight;
+    private String picture;
 
     @ElementCollection(targetClass = Position.class)
     @Enumerated(EnumType.ORDINAL)
@@ -51,26 +52,28 @@ public class Player {
 
     }
 
-    public Player(long id, String name, String lastname, String email, LocalDate dob, int age, int height, int weight, List<Position> pos, List<Statistics> statisticsList) {
+    public Player(long id, String name, String lastName, String email, LocalDate dob, int age, int height, int weight, String picture, List<Position> pos, List<Statistics> statisticsList) {
         this.id = id;
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.email = email;
         this.dob = dob;
         this.age = age;
         this.height = height;
         this.weight = weight;
+        this.picture = picture;
         this.pos = pos;
         this.statisticsList = statisticsList;
     }
 
-    public Player(String name, String lastname, String email, LocalDate dob, int height, int weight, List<Position> pos, List<Statistics> statisticsList) {
+    public Player(String name, String lastName, String email, LocalDate dob, int height, int weight, String picture, List<Position> pos, List<Statistics> statisticsList) {
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.email = email;
         this.dob = dob;
         this.height = height;
         this.weight = weight;
+        this.picture = picture;
         this.pos = pos;
         this.statisticsList = statisticsList;
     }
@@ -80,12 +83,12 @@ public class Player {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Player player = (Player) o;
-        return id == player.id && age == player.age && height == player.height && weight == player.weight && name.equals(player.name) && Objects.equals(lastname, player.lastname) && Objects.equals(email, player.email) && Objects.equals(dob, player.dob) && Objects.equals(pos, player.pos) && Objects.equals(statisticsList, player.statisticsList);
+        return id == player.id && age == player.age && height == player.height && weight == player.weight && Objects.equals(name, player.name) && Objects.equals(lastName, player.lastName) && Objects.equals(email, player.email) && Objects.equals(dob, player.dob) && Objects.equals(picture, player.picture) && Objects.equals(pos, player.pos) && Objects.equals(statisticsList, player.statisticsList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, lastname, email, dob, age, height, weight, pos, statisticsList);
+        return Objects.hash(id, name, lastName, email, dob, age, height, weight, picture, pos, statisticsList);
     }
 
     public long getId() {
@@ -104,12 +107,12 @@ public class Player {
         this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
 
     public String getEmail() {
@@ -132,9 +135,6 @@ public class Player {
         return Period.between(dob, LocalDate.now()).getYears();
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public int getHeight() {
         return height;
@@ -150,6 +150,14 @@ public class Player {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public List<Position> getPos() {

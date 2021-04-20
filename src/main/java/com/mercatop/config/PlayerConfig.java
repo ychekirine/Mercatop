@@ -26,6 +26,7 @@ public class PlayerConfig {
                     LocalDate.of(1996, Month.AUGUST, 4),
                     165,
                     55,
+                    "https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/lionel-messi/6071756-4-fre-FR/Lionel-Messi.jpg",
                     List.of(Position.FORWARDS),
                     List.of(new Statistics(
                             55,
@@ -44,6 +45,7 @@ public class PlayerConfig {
                     LocalDate.of(1996, Month.OCTOBER, 10),
                     180,
                     75,
+                    "https://media-exp1.licdn.com/dms/image/C4E03AQH8JDWjzJe4mA/profile-displayphoto-shrink_200_200/0/1579076648086?e=1622678400&v=beta&t=_3K-ku2hIlQGur-eh9o7IEoHzt856NRtfxS9HxneY3A",
                     List.of(Position.DEFENDERS),
                     List.of(new Statistics(
                             5,
