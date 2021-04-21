@@ -96,6 +96,22 @@ export class PlayerListComponent implements OnInit {
     )
   }
 
+  public searchPlayer(key: string): void{
+    const results: Player[] = [];
+    for(const player of this.players){
+      if(player.name.toLocaleLowerCase().indexOf(key.toLowerCase()) != -1
+        || player.lastName.toLocaleLowerCase().indexOf(key.toLowerCase()) != -1
+        || player.email.toLocaleLowerCase().indexOf(key.toLowerCase()) != -1
+      ){
+        results.push(player)
+      }
+    }
+    this.players = results;
+    if (results.length === 0 || !key){
+      this.getPlayers()
+    }
+  }
+
   /*submitted = false;
   onSubmit() { this.submitted = true;}
   get diagnostic() {return JSON.stringify(this.model)}*/

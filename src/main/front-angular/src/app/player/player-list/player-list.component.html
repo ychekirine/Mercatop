@@ -12,8 +12,8 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <!-- <input type="search" (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel
-              name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>-->
+      <input type="search" (ngModelChange)="searchPlayer(key.value)" #key="ngModel" ngModel
+              name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search players..." required>
     </form>
   </div>
 </nav>
@@ -167,7 +167,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete player {{deletePlayer?.name}}?</p>
+        <p>Are you sure you want to delete player {{deletePlayer?.name}} {{deletePlayer?.lastName}}?</p>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           <button (click)="onDeletePlayer(deletePlayer.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
