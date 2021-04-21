@@ -59,7 +59,7 @@ public class PlayerController {
 
     }*/
 
-    @PutMapping ("/update/{playerId}")
+    @PutMapping ("/update")
     public Player updatePlayer(@RequestBody Player player){
         return playerService.updatePlayer(player);
     }
@@ -68,10 +68,6 @@ public class PlayerController {
     public void playerStudent(@PathVariable("playerId") Long playerId){
         playerService.deletePlayer(playerId);
     }
-
-
-
-
 
 
 }

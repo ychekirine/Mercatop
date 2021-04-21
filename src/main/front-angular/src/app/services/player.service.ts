@@ -30,7 +30,7 @@ export class PlayerService {
   /// TODO : Check how to update (request param or just save the player)
 
   updatePlayer(player: Player): Observable<Player> {
-    const url = 'http://localhost:8080/api/v1/player/update/';
+    const url = 'http://localhost:8080/api/v1/player/update';
     return this.http.put<Player>(url, player);
   }
 
@@ -41,10 +41,3 @@ export class PlayerService {
   }
 
 }
-
-
-
-
-
-
-

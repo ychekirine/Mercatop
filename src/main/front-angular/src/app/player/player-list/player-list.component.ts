@@ -13,9 +13,11 @@ import {error} from "@angular/compiler/src/util";
 })
 export class PlayerListComponent implements OnInit {
 
+
   players= {} as Player[];
-  model = {} as Player;
-  positions = Object.values(PositionEnum);
+  editPlayer: Player | null = {} as Player;
+  deletePlayer: Player | null = {} as Player;
+  //positions = Object.values(PositionEnum);
 
   constructor(private playerService : PlayerService) { }
 
@@ -42,12 +44,14 @@ export class PlayerListComponent implements OnInit {
       button.setAttribute('data-target','#addPlayerModal');
     }
     if (mode === 'edit'){
+      this.editPlayer = player;
       button.setAttribute('data-target','#updatePlayerModal');
     }
     if (mode === 'delete'){
+      this.deletePlayer = player;
       button.setAttribute('data-target','#deleteEmployeeModal');
     }
-    //@ts-ignore: Object is possibly 'null'
+    // @ts-ignore
     container.appendChild(button);
     button.click();
   }
@@ -57,14 +61,41 @@ export class PlayerListComponent implements OnInit {
     document.getElementById('add-player-form')?.click();
     this.playerService.postPlayer(addForm.value).subscribe(
       (response: Player) => {
-       console.log(response);
-       this.getPlayers();
+        console.log(response);
+        this.getPlayers();
+        addForm.reset();
       },
-    (error: HttpErrorResponse) => {
+      (error: HttpErrorResponse) => {
         alert(error.message)
-    }
+        addForm.reset();
+      }
     )
   }
+
+  public onUpdatePlayer (player: Player) : void {
+    this.playerService.updatePlayer(player).subscribe(
+      (response: Player) => {
+        console.log(response);
+        this.getPlayers();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      }
+    )
+  }
+
+  public onDeletePlayer (playerId: number) : void {
+    this.playerService.deletePLayer(playerId).subscribe(
+      (response: void) => {
+        console.log(response);
+        this.getPlayers();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      }
+    )
+  }
+
   /*submitted = false;
   onSubmit() { this.submitted = true;}
   get diagnostic() {return JSON.stringify(this.model)}*/

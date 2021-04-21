@@ -4,6 +4,7 @@ import {PositionEnum} from "../enums/positionEnum";
 export class Player {
 
   constructor(
+    public id:number,
     public name: string,
     public lastName: string,
     public email: string,
