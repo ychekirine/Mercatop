@@ -35,8 +35,7 @@ export class PlayerService {
   }
 
   deletePLayer(playerId: number): Observable<void> {
-    //const url = 'http://localhost:8080/api/v1/player/delete/' + playerId;
-    const url = 'http://localhost:8080/api/v1/player/delete/${playerId}'
+    const url = 'http://localhost:8080/api/v1/player/delete/' + playerId;
     return this.http.delete<void>(url);
   }
 

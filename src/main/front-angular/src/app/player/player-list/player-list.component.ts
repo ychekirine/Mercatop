@@ -49,7 +49,7 @@ export class PlayerListComponent implements OnInit {
     }
     if (mode === 'delete'){
       this.deletePlayer = player;
-      button.setAttribute('data-target','#deleteEmployeeModal');
+      button.setAttribute('data-target','#deletePlayerModal');
     }
     // @ts-ignore
     container.appendChild(button);
