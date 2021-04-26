@@ -17,6 +17,7 @@ export class PlayerListComponent implements OnInit {
   players= {} as Player[];
   editPlayer: Player | null = {} as Player;
   deletePlayer: Player | null = {} as Player;
+  states = PositionEnum;
   //positions = Object.values(PositionEnum);
 
   constructor(private playerService : PlayerService) { }

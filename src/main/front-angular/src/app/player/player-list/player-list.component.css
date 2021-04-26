@@ -1,1 +1,16 @@
+.navbar{
+  border-radius: 5px;
+  background-color:#425B8A;
+
+}
+
+.nav-link:hover{
+  cursor: pointer;
+  background-color:#22427C;
+  border-radius: 11%;
+}
+
+.col-md-6{
+  background-color: #CCCCCC;
+}
 
